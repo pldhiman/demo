@@ -1,0 +1,46 @@
+@mixin textdiv($fontsize,$letterspace,$fontwt,$animation) {
+    display: block;
+    font-size: $fontsize;
+    letter-spacing: $letterspace;
+    font-weight: $fontwt;
+    animation: $animation 1s ease-out;
+}
+
+@mixin clear-fix {
+    &::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+
+/*
+MEDIA QUERY MANAGERx
+0-600PX   PHONE
+600PX-900PX  TAB-PORT
+900PX-1200PX   TAB-LAND
+1200PX-1800PX   ACTUAL WEBSITE
+1800PX--INFINITE  BIG-DESKTOP
+*/
+
+// BREAKPINT TYPES
+// phone
+// tab-port
+// tab-land
+// big-desktop
+
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media only screen and (max-width:600px){ @content };
+    }
+    @if $breakpoint==tab-port{
+        @media only screen and (max-width:900px){ @content };
+    }
+    @if $breakpoint==tab-land{
+        @media only screen and (max-width:1200px){ @content };
+    }
+    @if $breakpoint==big-desktop{
+        @media only screen and (min-width:1800px){ @content };
+    }
+}

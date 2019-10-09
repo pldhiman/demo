@@ -1,0 +1,93 @@
+.user-review{
+    margin: 0 auto;
+    
+    &-card{
+
+        width: 50%;
+       
+        padding: 3rem;
+        padding-left: 4rem;
+        height: 16rem;
+        background: $color-white;
+        transform: skewX(-10deg);
+        margin: 3rem auto;
+        box-shadow: 0 1rem 1.5rem rgba(0,0,0,.3);
+        
+    
+        &__image{
+            transform: skewX(10deg) translateX(-1rem);
+            width: 10rem;
+            height: 10rem;
+            background-color: white;
+            float: left;
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+    
+            
+            &-box{
+                height: 10rem;
+                position: relative;
+                transition: all .3s;
+                &--1{
+                    width: 100%;
+                    transform: translateY(-2rem);
+                    transition: all .3s;
+                }
+            }
+            &-hover--name{
+                font-size: 2rem;
+                z-index: 2;
+                position: absolute;
+                top:50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                text-align: center;
+                // font-weight: bold;
+                color: $color-white;
+                opacity: 0;
+                transition: all .3s;
+            }
+    
+        }
+        &__text{
+            transform: skewX(10deg);
+            
+            h4{
+                font-size: 2.5rem;
+            }
+            h5{
+                font-size: 1.5rem;
+            }
+        }
+    
+        &:hover &__image-hover--name{
+            opacity: 1;
+        }
+        &:hover &__image-box--1{
+            filter: blur(3px) brightness(90%);
+            transform: scale(1.2) translateY(-2rem);
+        }
+    }
+}
+    
+
+
+.bg-video{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    // opacity: .8;
+    // background-image: rgba(0,0,0,.2);
+    &__container{
+        height:100%;
+        width: 100%;
+        object-fit: cover;
+        
+    }
+}
+.margin-top-large{
+padding-top: 6rem;
+}

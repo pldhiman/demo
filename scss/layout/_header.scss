@@ -1,0 +1,48 @@
+.header{
+    height: 97vh;
+    background-image: linear-gradient(to right bottom,rgba($color-primary-light, 0.8),rgba($color-primary-dark, 0.7)),url('./assets/paula-may-540833-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    -webkit-clip-path:polygon(0 0,100% 0,100% 90%,0 100%);
+    clip-path:polygon(0 0,100% 0,100% 90%,0 100%);
+    
+    @media (min-resolution: 192dpi) and (min-width: 600px){
+   
+      background-image: linear-gradient(to right bottom,rgba($color-secondary-light, 0.8),rgba($color-secondary-dark, 0.7)),url('./assets/paula-may-540833-unsplash.jpg');
+    }
+    
+   
+
+    &__logo{
+      background: rgba($color-secondary,0);
+      color:$logo-color;
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50%;
+      position: absolute;
+      left: 2.5rem;
+      top: 2.5rem;
+      overflow: hidden;
+      font-weight: bold;
+      font-size: 4rem;
+    }
+    &__main{
+      position: absolute;
+      top:45%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      backface-visibility: hidden;
+      text-align: center;
+      &-text{
+        text-transform: uppercase;
+        color:$color-grey-light-1;
+        &--name{
+          @include textdiv(6rem,3.5rem,400,moveLeft );
+        }
+        &--sub{
+          @include textdiv(2rem,1.74rem ,700,moveRight);
+          margin-bottom: 6rem;
+        }
+      }
+    }
+  }
